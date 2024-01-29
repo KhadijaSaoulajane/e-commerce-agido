@@ -1,0 +1,25 @@
+INSERT INTO "APP_USER" (email,password,role) values ('agent@agido.de','agido','agent');
+INSERT INTO "APP_USER" (email,password,role) values ('customer1@agido.de','agido','customer');
+INSERT INTO "APP_USER" (email,password,role) values ('customer2@agido.de','agido','customer');
+INSERT INTO "APP_USER" (email,password,role) values ('customer3@agido.de','agido','customer');
+INSERT INTO "APP_USER" (email,password,role) values ('customer4@agido.de','agido','customer');
+INSERT INTO "ACCOUNT" (balance) values (1200);
+INSERT INTO "ACCOUNT" (balance) values (510);
+INSERT INTO "ACCOUNT" (balance) values (40);
+INSERT INTO "ACCOUNT" (balance) values (0);
+
+INSERT INTO "TRANSACTION" (amount,created_at,is_approved,type,account_id) values (1000,'2023-01-13',false,'D',1);
+INSERT INTO "TRANSACTION" (amount,created_at,is_approved,type,account_id) values (200,'2024-01-27',false,'D',1);
+INSERT INTO "TRANSACTION" (amount,created_at,is_approved,type,account_id) values (50,'2023-09-05',false,'W',1);
+
+INSERT INTO "TRANSACTION" (amount,created_at,is_approved,type,account_id) values (500,'2023-02-13',false,'D',2);
+INSERT INTO "TRANSACTION" (amount,created_at,is_approved,type,account_id) values (10,'2024-01-02',false,'D',2);
+INSERT INTO "TRANSACTION" (amount,created_at,is_approved,type,account_id) values (40,'2024-01-28',false,'D',3);
+
+UPDATE "APP_USER"SET account_id =1 WHERE user_id = 2;
+UPDATE "APP_USER"SET account_id =4 WHERE user_id = 3;
+UPDATE "APP_USER"SET account_id =3 WHERE user_id = 4;
+UPDATE "APP_USER"SET account_id =2 WHERE user_id = 5;
+select * from "APP_USER";
+select * from "ACCOUNT";
+select * from "TRANSACTION";
